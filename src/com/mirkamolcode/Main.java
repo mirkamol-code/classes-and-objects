@@ -1,8 +1,8 @@
 package com.mirkamolcode;
 
-import com.mirkamolcode.carDealerships.CarDealership;
 import com.mirkamolcode.cars.Car;
-import com.mirkamolcode.cars.EngineType;
+import com.mirkamolcode.cars.CarService;
+import com.mirkamolcode.cars.Garage;
 import com.mirkamolcode.people.Gender;
 import com.mirkamolcode.people.Person;
 
@@ -10,22 +10,21 @@ public class Main {
 
 
     static void main() {
-        Person malePerson = new Person("John", "Doe", Gender.M, "john.doe@example.com");
+        Garage garage = new Garage(2);
 
-        Person femalePerson = new Person("Jane", "Smith",   Gender.F, "jane.smith@example.com");
+        Car car1 = new Car("Toyota", "Corolla", 2021, "ABC123");
+        Car car2 = new Car("Honda", "Civic", 2022, "XYZ789");
 
-        System.out.println("Male Person:");
-        System.out.println("First Name: " + malePerson.getFirstName());
-        System.out.println("Last Name: " + malePerson.getLastName());
-        System.out.println("Gender: " + malePerson.getGender());
-        System.out.println("Email: " + malePerson.getEmail());
+        garage.addCar(car1);
+        garage.addCar(car2);
 
-        System.out.println();
+        Car[] allCars = garage.getAllCars();
+        for (Car car : allCars) {
+            System.out.println("Car: " + car.getMake() + " " + car.getModel() + " (" + car.getYear() + ")");
+        }
 
-        System.out.println("Female Person:");
-        System.out.println("First Name: " + femalePerson.getFirstName());
-        System.out.println("Last Name: " + femalePerson.getLastName());
-        System.out.println("Gender: " + femalePerson.getGender());
-        System.out.println("Email: " + femalePerson.getEmail());
+        CarService carService = new CarService();
+        carService.repairCar(car1);
+        carService.washCar(car2);
     }
 }
