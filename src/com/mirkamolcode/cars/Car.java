@@ -3,46 +3,34 @@ package com.mirkamolcode.cars;
 import com.mirkamolcode.carDealerships.CarDealership;
 
 public class Car {
-    private String manufacturer;
-    private double price;
-    private EngineType engineType;
+    private String make;
+    private String model;
+    private int year;
+    private String licensePlate;
 
-    public Car(String manufacturer, double price, EngineType engineType) {
-        this.manufacturer = manufacturer;
-        this.price = price;
-        this.engineType = engineType;
+    public Car(String make, String model, int year, String licensePlate) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.licensePlate = licensePlate;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
+    // Getters and setters (optional)
+    // You can also add other methods as needed
+
+    public String getMake() {
+        return make;
     }
 
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
+    public String getModel() {
+        return model;
     }
 
-    public double getPrice() {
-        return price;
+    public int getYear() {
+        return year;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public EngineType getEngineType() {
-        return engineType;
-    }
-
-    public void setEngineType(EngineType engineType) {
-        this.engineType = engineType;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "manufacturer='" + manufacturer + '\'' +
-                ", price=" + price +
-                ", engineType=" + engineType +
-                '}';
+    String getLicensePlate() {
+        return licensePlate;
     }
 }
