@@ -1,6 +1,5 @@
 package com.mirkamolcode.cars;
 
-import com.mirkamolcode.carDealerships.CarDealership;
 
 public class Car {
     private String make;
